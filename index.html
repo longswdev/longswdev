@@ -30,6 +30,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden; /* Ngăn chặn cuộn khi có hoa rơi */
         }
 
         .profile-container {
@@ -40,6 +41,7 @@
             padding: 20px;
             backdrop-filter: blur(10px);
             text-align: center;
+            position: relative; /* Để hiệu ứng hoa rơi có thể sử dụng */
         }
 
         .profile-header {
@@ -59,6 +61,7 @@
 
         .profile-info {
             text-align: left;
+            width: 100%;
         }
 
         .profile-info h2 {
@@ -70,6 +73,11 @@
         .profile-info p {
             font-size: 16px;
             margin: 5px 0;
+        }
+
+        .info-grid {
+            display: flex;
+            justify-content: space-between;
         }
 
         .bank-info-section {
@@ -98,6 +106,8 @@
             text-align: center;
             transition: transform 0.3s;
             cursor: pointer;
+            position: relative; /* Để hiệu ứng hoa rơi có thể sử dụng */
+            overflow: hidden; /* Ngăn chặn hoa rơi ra ngoài thẻ */
         }
 
         .bank-card:hover {
@@ -119,6 +129,16 @@
                 width: 100%;
             }
         }
+
+        /* Hiệu ứng hoa rơi */
+        .flower {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/8628/8628178.png'); /* Hình ảnh hoa */
+            background-size: cover;
+            pointer-events: none; /* Ngăn chặn tương tác với hoa */
+        }
     </style>
 </head>
 
@@ -129,10 +149,14 @@
             <div class="profile-info">
                 <h2>Đỗ Văn Long</h2>
                 <p>Software Developer</p>
-                <p>Email: longswdev366@gmail.com</p>
-                <p>Điện thoại: 0865936654</p>
-                <p>Năm sinh: 2006</p>
-                <p>Địa chỉ: Ninh Bình, Việt Nam</p>
+                <div class="info-grid">
+                    <p>Email: longswdev366@gmail.com</p>
+                    <p>Điện thoại: 0865936654</p>
+                </div>
+                <div class="info-grid">
+                    <p>Năm sinh: 2006</p>
+                    <p>Địa chỉ: Ninh Bình, Việt Nam</p>
+                </div>
             </div>
         </div>
 
@@ -175,6 +199,31 @@
                 console.error('Có lỗi xảy ra khi sao chép: ', err);
             });
         }
+
+        // Hàm tạo hiệu ứng hoa rơi
+        function createFlowerEffect(event) {
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            document.body.appendChild(flower);
+            flower.style.left = `${event.clientX}px`;
+            flower.style.top = `${event.clientY}px`;
+
+            const randomAnimationDuration = Math.random() * 3 + 2; // Thời gian ngẫu nhiên từ 2 đến 5 giây
+            flower.style.transition = `transform ${randomAnimationDuration}s, opacity ${randomAnimationDuration}s`;
+            flower.style.transform = `translateY(${window.innerHeight}px)`;
+            flower.style.opacity = '0';
+
+            // Xóa hoa sau khi hoàn thành hiệu ứng
+            setTimeout(() => {
+                flower.remove();
+            }, randomAnimationDuration * 1000);
+        }
+
+        // Thêm sự kiện click cho tất cả các thẻ ngân hàng
+        const bankCards = document.querySelectorAll('.bank-card');
+        bankCards.forEach(card => {
+            card.addEventListener('click', createFlowerEffect);
+        });
     </script>
 </body>
 
