@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đỗ Văn Long - Thông tin cá nhân</title>
     
+    <link rel="stylesheet" href="path/to/your/stylesheet.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
@@ -42,6 +43,7 @@
             backdrop-filter: blur(10px);
             text-align: center;
             position: relative; /* Để hiệu ứng hoa rơi có thể sử dụng */
+            overflow: hidden; /* Ngăn chặn hoa rơi ra ngoài */
         }
 
         .profile-header {
@@ -107,7 +109,6 @@
             transition: transform 0.3s;
             cursor: pointer;
             position: relative; /* Để hiệu ứng hoa rơi có thể sử dụng */
-            overflow: hidden; /* Ngăn chặn hoa rơi ra ngoài thẻ */
         }
 
         .bank-card:hover {
@@ -167,7 +168,7 @@
                     <i class="fas fa-university"></i>
                     <p>MB Bank</p>
                     <p>Đỗ Văn Long</p>
-                    <p>0865936654</p>
+                    <p>2030686899999</p>
                 </div>
                 <div class="bank-card" onclick="copyToClipboard('2601738567')">
                     <i class="fas fa-university"></i>
