@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/010/351/193/original/spring-flowers-background-with-cherry-blossoms-and-mountains-in-a-spring-scenery-painting-free-vector.jpg'); /* Hình nền */
+            background-size: cover; /* Làm cho hình nền phủ kín */
+            background-position: center; /* Căn giữa hình nền */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            width: 80%;
+            max-width: 900px;
+            background-color: rgba(42, 42, 42, 0.8); /* Màu nền của khung thông tin */
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px); /* Hiệu ứng làm mờ cho khung */
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #444;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 3px solid #FFA500;
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .profile-info h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .bank-info-section {
+            padding: 20px 0;
+        }
+
+        .bank-info-section h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #FFA500;
+        }
+
+        .bank-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .bank-card {
+            background-color: #333;
+            width: 45%;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .bank-card:hover {
+            transform: scale(1.05);
+        }
+
+        .bank-card i {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #FFA500;
+        }
+
+        .bank-card p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 600px) {
+            .bank-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="https://www.facebook.com/photo/?fbid=122108221142076130&set=a.122095607450076130" alt="Avatar" class="profile-avatar">
+            <div class="profile-info">
+                <h2>Đỗ Văn Long</h2>
+                <p>Software Developer</p>
+                <p>Email: longswdev366@gmail.com</p>
+                <p>Số điện thoại: 0865936654</p>
+                <p>Năm sinh: 2006</p>
+                <p>Địa chỉ: Ninh Bình, Việt Nam</p>
+            </div>
+        </div>
+
+        <div class="bank-info-section">
+            <h3>Thông tin ngân hàng</h3>
+            <div class="bank-info">
+                <div class="bank-card" onclick="copyToClipboard('2030686899999')">
+                    <i class="fas fa-university"></i>
+                    <p>MB bank</p>
+                    <p>Đỗ Văn Long</p>
+                    <p>2030686899999</p>
+                </div>
+                <div class="bank-card" onclick="copyToClipboard('2601738567')">
+                    <i class="fas fa-university"></i>
+                    <p>BIDV</p>
+                    <p>Đỗ Văn Long</p>
+                    <p>2601738567</p>
+                </div>
+                <div class="bank-card" onclick="copyToClipboard('0865936654')">
+                    <i class="fas fa-wallet"></i>
+                    <p>Ví MoMo</p>
+                    <p>Đỗ Văn Long</p>
+                    <p>0865936654</p>
+                </div>
+                <div class="bank-card" onclick="copyToClipboard('1049365841')">
+                    <i class="fas fa-university"></i>
+                    <p>VCB</p>
+                    <p>Đỗ Văn Long</p>
+                    <p>1049365841</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Số tài khoản đã được sao chép: ' + text);
+            }).catch(err => {
+                console.error('Có lỗi xảy ra khi sao chép: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>
