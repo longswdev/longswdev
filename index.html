@@ -5,25 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin cá nhân</title>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="./ico/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="./ico/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="./ico/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="./ico/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="./ico/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="./ico/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="./ico/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./ico/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./ico/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="./ico/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="./ico/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./ico/favicon-16x16.png">
-<link rel="manifest" href="./ico/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="./ico/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+
+    <!-- Icons and Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
     
     <style>
         * {
@@ -34,9 +24,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-image: url('https://static.vecteezy.com/system/resources/previews/010/351/193/original/spring-flowers-background-with-cherry-blossoms-and-mountains-in-a-spring-scenery-painting-free-vector.jpg'); /* Hình nền */
-            background-size: cover; /* Làm cho hình nền phủ kín */
-            background-position: center; /* Căn giữa hình nền */
+            background: url('https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/hinh-nen-desktop.jpg.webp') no-repeat center center/cover;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -45,18 +33,20 @@
         }
 
         .profile-container {
-            width: 80%;
-            max-width: 900px;
-            background-color: rgba(42, 42, 42, 0.8); /* Màu nền của khung thông tin */
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(42, 42, 42, 0.8);
             border-radius: 12px;
             padding: 20px;
-            backdrop-filter: blur(10px); /* Hiệu ứng làm mờ cho khung */
+            backdrop-filter: blur(10px);
+            text-align: center;
         }
 
         .profile-header {
             display: flex;
             align-items: center;
             border-bottom: 2px solid #444;
+            padding-bottom: 20px;
         }
 
         .profile-avatar {
@@ -83,27 +73,26 @@
         }
 
         .bank-info-section {
-            padding: 20px 0;
+            margin-top: 20px;
         }
 
         .bank-info-section h3 {
             font-size: 22px;
             font-weight: 500;
-            margin-bottom: 20px;
-            text-align: center;
             color: #FFA500;
+            margin-bottom: 20px;
         }
 
         .bank-info {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
         }
 
         .bank-card {
             background-color: #333;
             width: 45%;
-            margin-bottom: 20px;
+            margin: 10px 0;
             border-radius: 12px;
             padding: 20px;
             text-align: center;
@@ -117,13 +106,12 @@
 
         .bank-card i {
             font-size: 36px;
-            margin-bottom: 10px;
             color: #FFA500;
+            margin-bottom: 10px;
         }
 
         .bank-card p {
             font-size: 16px;
-            margin: 5px 0;
         }
 
         @media (max-width: 600px) {
@@ -142,7 +130,7 @@
                 <h2>Đỗ Văn Long</h2>
                 <p>Software Developer</p>
                 <p>Email: longswdev366@gmail.com</p>
-                <p>Số điện thoại: 0865936654</p>
+                <p>Điện thoại: 0865936654</p>
                 <p>Năm sinh: 2006</p>
                 <p>Địa chỉ: Ninh Bình, Việt Nam</p>
             </div>
@@ -153,7 +141,7 @@
             <div class="bank-info">
                 <div class="bank-card" onclick="copyToClipboard('2030686899999')">
                     <i class="fas fa-university"></i>
-                    <p>MB bank</p>
+                    <p>MB Bank</p>
                     <p>Đỗ Văn Long</p>
                     <p>0865936654</p>
                 </div>
