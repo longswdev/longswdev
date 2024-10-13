@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +30,7 @@
             justify-content: center;
             align-items: center;
             height: 80vh;
-            overflow: hidden; /* Ngăn chặn cuộn khi có hoa rơi */
+            overflow: hidden;
         }
 
         .profile-container {
@@ -42,8 +41,8 @@
             padding: 20px;
             backdrop-filter: blur(10px);
             text-align: center;
-            position: relative; /* Để hiệu ứng hoa rơi có thể sử dụng */
-            overflow: hidden; /* Ngăn chặn hoa rơi ra ngoài */
+            position: relative;
+            overflow: hidden;
         }
 
         .profile-header {
@@ -108,7 +107,7 @@
             text-align: center;
             transition: transform 0.3s;
             cursor: pointer;
-            position: relative; /* Để hiệu ứng hoa rơi có thể sử dụng */
+            position: relative;
         }
 
         .bank-card:hover {
@@ -136,9 +135,9 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background-image: url('https://cdn-icons-png.flaticon.com/512/8628/8628178.png'); /* Hình ảnh hoa */
+            background-image: url('https://cdn-icons-png.flaticon.com/512/8628/8628178.png');
             background-size: cover;
-            pointer-events: none; /* Ngăn chặn tương tác với hoa */
+            pointer-events: none;
         }
     </style>
 </head>
@@ -227,5 +226,4 @@
         });
     </script>
 </body>
-
 </html>
