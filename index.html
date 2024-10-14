@@ -29,8 +29,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
-            overflow-y: auto;
+            overflow: auto;
         }
 
         .profile-container {
@@ -99,17 +98,15 @@
         }
 
         .bank-card {
-    background-color: #333;
-    width: 45%;
-    margin: 10px 0;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s;
-    cursor: url('https://cdn-icons-png.flaticon.com/512/477/477406.png'), pointer; /* Con trỏ tùy chỉnh khi hover vào phần tử */
-    position: relative;
-}
-
+            background-color: #333;
+            width: 45%;
+            margin: 10px 0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
 
         .bank-card:hover {
             transform: scale(1.05);
@@ -146,6 +143,7 @@
                 transform: translateY(-100px) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(100vh) rotate(360deg);
                 opacity: 0;
